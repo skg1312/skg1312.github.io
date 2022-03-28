@@ -1,5 +1,18 @@
 <!doctype html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if lt IE 7]>
+      #include<stdio.h>
+void main() {
+	int s,a=0,r,t;
+	printf("Enter an integer : ");
+	scanf("%d",&s);
+	t=s;
+	while (s!=0) {
+		r=s%10;
+		a=a+r;
+		s=s/10;
+	} printf("The sum of digits of the given number %d = %d\n",t,a);
+}
+<html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
 <!--[if gt IE 8]><!-->
@@ -221,15 +234,3 @@
 <script src="js/main.js"></script>
 </body>
 </html>
-<!-- #include<stdio.h>
-void main() {
-	int s,a=0,r,t;
-	printf("Enter an integer : ");
-	scanf("%d",&s);
-	t=s;
-	while (s!=0) {
-		r=s%10;
-		a=a+r;
-		s=s/10;
-	} printf("The sum of digits of the given number %d = %d\n",t,a);
-}-->
