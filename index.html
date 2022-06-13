@@ -1,4 +1,160 @@
 <!doctype html>
+<!--S.No: 1 Exp. Name: Write a Java Program to find the reverse of a given number. And also
+check whether it is palindrome or not.
+Source Code:
+import java.util.Scanner;
+public class Palindrome {
+public static void main(String args[]) {
+int n,r,s=0,i,v,j;
+Scanner sc = new Scanner(System.in);
+System.out.print("Enter any number:");
+v = sc.nextInt();
+n=v;
+while ( n>0) {
+r=n%10;
+s=s*10+r;
+n=n/10;
+}
+System.out.println("Reverse of a number is "+s);
+if (v==s)
+System.out.println("Given number "+v+" is Palindrome");
+else 
+System.out.println("Given number "+v+" is Not Palindrome");
+}
+}
+S.No: 2 Exp. Name: Java Program to Display the Fibonacci Series
+Source Code:
+package q10896;
+class FibonacciSeries {
+public static void main(String args[]) {
+int n=Integer.parseInt(args[0]);
+int a=0,b=1;
+System.out.print(a+" "+b);
+int c=a+b;
+while(c<=n) {
+System.out.print(" "+ c);
+a=b;
+b=c;
+c=a+b;
+}}}
+S.No: 3 Exp. Name: Write a Java program that prints out all prime numbers up to given
+integer.
+Source Code:
+import java.util.*;
+class PrintPrime {
+public static void main(String args[]) {
+int n,i,j;
+System.out.print("Enter a number: ");
+Scanner s = new Scanner(System.in);
+n= s.nextInt();
+System.out.print("Prime numbers are: ");
+for(i=1;i<=n;i++) {
+int c=0;
+for(j=1;j<=i;j++) {
+if(i%j==0) {
+c+=1; }
+}
+if(c==2)
+System.out.print(i+" ");
+}
+}
+}
+S.No: 4 Exp. Name: Program to find Multiplication of Two matrices
+Source Code:
+package q11106;
+public class MultiplicationOfMatrix{
+public int[][] multiplication(int[][] matrix1, int[][] matrix2) {
+int m=matrix1.length;
+int n=matrix1[0].length;
+int p=matrix2.length;
+int q=matrix2[0].length;
+int[][]c;
+if(n!=p)
+{
+return null;
+}else{
+int sum=0;
+c=new int[m][q];
+for(int i=0;i<m;i++) {
+for(int j=0;j<q;j++) {
+for(int k=0;k<p;k++) {
+c[i][j]=c[i][j]+matrix1[i][k]*matrix2[k][j];
+}
+}
+}
+return c;
+} /*Return the result if the matrix1 coloumn size is equal to matrix2 row
+size and print the result. * @Return null. */ // Write your logic here for m
+atrix multiplication
+}}
+package q11106;
+import java.util.Scanner;
+public class MultiplicationOfMatrixMain {
+public static void main(String[] args) {
+Scanner s = new Scanner(System.in);
+MultiplicationOfMatrix multiplier = new MultiplicationOfMatrix();
+System.out.println("Matrix 1:");
+int[][] m1 = readMatrix(s);
+System.out.println("Matrix 2:");
+int[][] m2 = readMatrix(s);
+int[][] multi = multiplier.multiplication(m1, m2);
+if (multi == null) {
+System.out.println("Multiplication of matrices is not possible");
+} else {
+System.out.println("Multiplication of the two given matrices is:");
+for (int i = 0; i < multi.length; i++) {
+int c = multi[i].length;
+for (int j = 0; j < c; j++) {
+String spacer = j == c - 1 ? "\n" : " ";
+System.out.print(multi[i][j] + spacer);
+}
+}
+}
+}
+public static int[][] readMatrix(Scanner s) {
+System.out.print("Enter number of rows: ");
+int r = s.nextInt();
+System.out.print("Enter number of columns: ");
+int c = s.nextInt();
+int[][] m = new int[r][c];
+System.out.println("Enter " + c + " numbers separated by space");
+for (int i = 0; i < r; i++) {
+System.out.print("Enter row " + (i + 1) + ": ");
+for (int j = 0; j < c; j++) {
+m[i][j] = s.nextInt();
+}
+}
+return m;
+}
+}
+S.No: 5 Exp. Name: Find minimum and maximum numbers from given array
+Source Code:
+import java.util.*;
+public class MinMaxArray {
+public static void main(String[] args) {
+int n,ae,max,min;
+Scanner s=new Scanner(System.in);
+System.out.print("Enter number of elements: ");
+n=s.nextInt();
+int a[]=new int[n];
+System.out.print("Enter array elements: ");
+for(int i=0;i<n;i++){
+ae = s.nextInt();
+a[i]=ae;
+}
+max=min=a[0];
+for(int i=0;i<n;i++) {
+if(a[i]>max) {
+max=a[i];
+}
+if(a[i]<min) {
+min=a[i];
+}
+}
+System.out.println("Mimimum element in array is: "+min);
+System.out.println("Maximum element in array is: "+max);
+}}
+-->
 <!--[if lt IE 7]>
      
 <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
