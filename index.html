@@ -46,15 +46,6 @@ System.out.println("Enter the length of box:"); l1=sc.nextDouble();
 System.out.println("Enter the breadth of box:");  b1=sc.nextDouble();
 System.out.println("Enter height of box:"); h1=sc.nextDouble();
 BoxDemo obj=new BoxDemo(l1,b1,h1);  obj.vol();}}
-7 Exp. Name: Create static methods to perform arithmetic operations and access them in other classes.
-Code: import java.util.Scanner; class Arithematic { public static void main(String args[]) {
-int a,b,c;  Scanner sc=new Scanner(System.in);  System.out.print("Enter a number: ");
-a=sc.nextInt(); System.out.print("Enter another number: ");
-b=sc.nextInt(); System.out.println("Addition of "+a+" and "+b+" is: "+(a+b));
-System.out.println("Subtraction of "+a+" and "+b+" is: "+(a-b));
-System.out.println("Multiplication of "+a+" and "+b+" is: "+(a*b));
-System.out.println("Division of "+a+" and "+b+" is: "+(a/b));
-System.out.println("Modulo of "+a+" and "+b+" is: "+(a%b));}}
 8 Exp. Name: Write a Java program to exchange two variables using call by value
 Code: import java.util.Scanner; class SwapDemo {  public static void swap(int a, int b) {
 int temp=a; a=b;  b=temp;}
