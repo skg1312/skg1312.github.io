@@ -1,22 +1,18 @@
 <!doctype html>
-<!--1 Exp. Name: Write a Java Program to find the reverse of a given number. And also check whether it is palindrome or not.
-Code : import java.util.Scanner;  public class Palindrome { public static void main(String args[]) {
+<!--1 FRGNPONCode : import java.util.Scanner;  public class Palindrome { public static void main(String args[]) {
 int n,r,s=0,i,v,j;  Scanner sc = new Scanner(System.in);  System.out.print("Enter any number:");
 v = sc.nextInt(); n=v;  while ( n>0) {  r=n%10; s=s*10+r; n=n/10;}
 System.out.println("Reverse of a number is "+s);
 if (v==s) System.out.println("Given number "+v+" is Palindrome");
 else  System.out.println("Given number "+v+" is Not Palindrome");}}
-2 Exp. Name: Java Program to Display the Fibonacci Series
-Code: class FibonacciSeries { public static void main(String args[]) {  int n=Integer.parseInt(args[0]);
-int a=0,b=1;  System.out.print(a+" "+b);  int c=a+b;  while(c<=n) { System.out.print(" "+ c);
-a=b;  b=c;  c=a+b;  }}}
+2 FS Code: class FibonacciSeries { public static void main(String args[]) {  int n=Integer.parseInt(args[0]);
+int a=0,b=1;  System.out.print(a+" "+b);  int c=a+b;  while(c<=n) { System.out.print(" "+ c);a=b;  b=c;  c=a+b;  }}}
 3 Exp. Name: Write a Java program that prints out all prime numbers up to given integer.
 Code: import java.util.*; class PrintPrime {  public static void main(String args[]) {
 int n,i,j;  System.out.print("Enter a number: "); Scanner s = new Scanner(System.in);
 n= s.nextInt(); System.out.print("Prime numbers are: ");  for(i=1;i<=n;i++) {
 int c=0;  for(j=1;j<=i;j++) { if(i%j==0) {  c+=1; }}  if(c==2)  System.out.print(i+" ");}}}
-4 Exp. Name: Program to find Multiplication of Two matrices
-Code: import java.util.Scanner; public class MultiplicationOfMatrixMain {
+4 MOTM Code: import java.util.Scanner; public class MultiplicationOfMatrixMain {
 public static void main(String[] args) {  Scanner s = new Scanner(System.in);
 MultiplicationOfMatrix multiplier = new MultiplicationOfMatrix();
 System.out.println("Matrix 1:");  int[][] m1 = readMatrix(s); System.out.println("Matrix 2:");
@@ -37,8 +33,7 @@ n=s.nextInt();  int a[]=new int[n]; System.out.print("Enter array elements: ");
 for(int i=0;i<n;i++){ ae = s.nextInt(); a[i]=ae;} max=min=a[0];
 for(int i=0;i<n;i++) {  if(a[i]>max) {  max=a[i];}  if(a[i]<min) {  min=a[i];}}
 System.out.println("Mimimum element in array is: "+min);  System.out.println("Maximum element in array is: "+max);}}
-6 Exp.Name: Write a Java program to find the volume of a box by creating objects. 
-Code: import java.util.*; class BoxDemo { double l,b,h;
+6 FVOBCO Code: import java.util.*; class BoxDemo { double l,b,h;
 BoxDemo(double le,double br,double he) {  l=le; b=br; h=he; }
 public void vol() { System.out.println("Volume is "+(l*b*h)); }
 public static void main(String args[]) {  double l1,b1,h1;  Scanner sc=new Scanner(System.in);
@@ -46,16 +41,14 @@ System.out.println("Enter the length of box:"); l1=sc.nextDouble();
 System.out.println("Enter the breadth of box:");  b1=sc.nextDouble();
 System.out.println("Enter height of box:"); h1=sc.nextDouble();
 BoxDemo obj=new BoxDemo(l1,b1,h1);  obj.vol();}}
-8 Exp. Name: Write a Java program to exchange two variables using call by value
-Code: import java.util.Scanner; class SwapDemo {  public static void swap(int a, int b) {
+8 CBV Code: import java.util.Scanner; class SwapDemo {  public static void swap(int a, int b) {
 int temp=a; a=b;  b=temp;}
 public static void main (String args[]) { System.out.println("Enter value 1:");
 Scanner s=new Scanner(System.in); int n=s.nextInt();
 System.out.println("Enter value 2:"); Scanner v = new Scanner(System.in); int p=v.nextInt();
 System.out.println("Before swapping value of a is "+n+" value of b is "+p);
 System.out.println("After swapping value of a is "+n+" value of b is "+p);}}
-9 Exp. Name: Write a Java program to exchange two variables using call by reference
-Code: import java.util.Scanner; class SwapDemo1 { int a,b;  SwapDemo1(int a,int b) {
+9 CBR Code: import java.util.Scanner; class SwapDemo1 { int a,b;  SwapDemo1(int a,int b) {
 this.a=a; this.b=b;  }  void swap(SwapDemo1 o) {  int temp; temp=o.a; this.a=o.b; this.b=temp;  }
 public static void main(String[] args) {  int a,b;  Scanner sc=new Scanner(System.in);
 System.out.println("Enter value 1:"); a=sc.nextInt();
@@ -63,8 +56,7 @@ System.out.println("Enter value 2:"); b=sc.nextInt();
 SwapDemo1 obj=new SwapDemo1(a,b);
 System.out.println("Before swapping value of a is "+obj.a+" value of b is "+obj.b);obj.swap(obj);
 System.out.println("After swapping value of a is "+obj.a+" value of b is "+obj.b);}}
-10 Exp. Name: Write a Java program to implement Method overloading 
-Code: class Addition {  public void add(int x,int y) {  System.out.println("Sum of "+x+" and "+y+" : "+(x+y));}
+10 MO Code: class Addition {  public void add(int x,int y) {  System.out.println("Sum of "+x+" and "+y+" : "+(x+y));}
 public void add(float x,float y) {  System.out.println("Sum of "+x+" and "+y+" : "+(x+y));}
 public void add(int x,float y) {  System.out.println("Sum of "+x+" and "+y+" : "+(x+y));}
 public void add(float x,double y,double z) { System.out.println("Sum of "+x+", "+y+" and "+z+" : "+(x+y+z));}
@@ -72,8 +64,7 @@ public static void main(String[] args) {  int a=Integer.parseInt(args[0]);
 int b=Integer.parseInt(args[1]);  float c=Float.parseFloat(args[2]);
 float d=Float.parseFloat(args[3]);  double e=Double.parseDouble(args[4]);
 double f=Double.parseDouble(args[5]); Addition obj=new Addition();  obj.add(a,b); obj.add(c,d); obj.add(b,d);obj.add(c,e,f);}}
-11 Exp. Name: Write a Java program to implement Constructor overloading 
-Code: class Box { double l,b,h; Box() {l=-1;b=-1;h=-1;}Box(double length) {l=b=h=length;}
+11 CO Code: class Box { double l,b,h; Box() {l=-1;b=-1;h=-1;}Box(double length) {l=b=h=length;}
 Box(double width,double height,double depth) {l=width;b=height;h=depth;}public double volume() {return (l*b*h);}
 public static void main(String args[]) {double l,b,h;
 int n=args.length;if(n==3) {l=Double.parseDouble(args[0]);b=Double.parseDouble(args[1]);h=Double.parseDouble(args[2]);
