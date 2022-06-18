@@ -1,0 +1,6 @@
+k = list(map(int, input("Enter a list element separated by space: ").split()))
+#print(list)
+k_min = min(k)
+k_max = max(k)
+print("Maximum element is:", k_max)
+print("Minimum element is:", k_min)
