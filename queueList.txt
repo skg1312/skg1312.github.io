@@ -1,0 +1,14 @@
+l=[]
+while(1):
+	a=input("Enter element, 'XXX' to end: ")
+	if a=='XXX':
+		break
+	else:
+		l+=[a]
+print("Initial queue")
+print(l)
+print("Elements dequeued from queue:")
+for i in range(3):
+	print(l.pop(0))
+print("Queue after removing elements:")
+print(l)

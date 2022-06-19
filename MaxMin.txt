@@ -1,0 +1,10 @@
+a=list(map(int,input("Enter a list element separated by space: ").split()))
+b=a[0]
+c=a[0]
+for i in range(len(a)):
+	if b<a[i]:
+		b=a[i]
+	elif c>a[i]:
+		c=a[i]
+print("Maximum element is:",b)
+print("Minimum element is:",c)

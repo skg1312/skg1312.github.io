@@ -1,0 +1,24 @@
+def binarySearch(lis, low, high, se):
+	if low <= high:
+		mid = (low+high)//2
+		if lis[mid] == se:	
+			return mid
+		elif lis[mid] > se:	
+			return binarySearch(lis, low, mid-1, se)	
+		else:	
+			return binarySearch(lis, mid+1, high, se)
+	else:	
+		return -1
+lis = []
+a = int(input("Enter no of elements"))
+print("enter elements")
+for i in range(a):	
+	b = int(input())	
+	lis.append(b)
+lis.sort()	
+c = int(input(" Which element you want to search"))
+result = binarySearch(lis, 0, len(lis)-1, c)
+if result != -1:	
+	print("The element is present at index ", result)
+else:
+	print("The element is not found")

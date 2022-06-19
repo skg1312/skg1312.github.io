@@ -1,0 +1,52 @@
+def insertion():
+	value = int(input("Enter the value to be Added: "))
+	priority = int(input("Enter the Priority of this element: "))
+	t = (value, priority)
+	demo.append(t)
+def deletion():	
+	val = demo[0]	
+	demo.remove(val)
+	print("The popped value is {}".format(val[0]))
+def display():
+	length = len(demo)
+	for i in range(length):
+		print("{} ({})".format(demo[i][0], demo[i][1]))
+def Sort_tuple(demo):
+	lis = len(demo)	
+	for i in range(0, lis):
+		for j in range(0, lis-i-1):
+			if(demo[j][1] > demo[j+1][1]):
+				temp = demo[j]
+				demo[j] = demo[j+1]	
+				demo[j+1] = temp	
+	return demo
+demo = []
+a = int(input("Enter number of elements in priority queue: "))
+for i in range(a):
+	value = int(input("Enter a value: "))
+	priority = int(input("Enter priority: "))
+	t = (value, priority)	
+	demo.append(t)
+print("Priority Queue Initially")
+demo = Sort_tuple(demo)
+display()
+while True:	
+	b = int(input("Enter 1 for Insertion and 2 for Deletion: "))
+	if(b==1):
+		insertion()	
+		display()		
+		c = input("do you want to do more operations(Y/N): ")	
+		if(c == 'n'):
+			print("Priority Queue Finally")	
+			display()	
+			break	
+	elif(b == 2):	
+		deletion()	
+		display()		
+		c = input("do you want to do more operations(Y/N): ")
+		if(c == 'n'):
+			print("Priority Queue Finally")
+			display()
+			break	
+	else:	
+		print("Wrong option")	

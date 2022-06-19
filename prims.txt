@@ -1,0 +1,77 @@
+import sys
+class Graph:
+	def __init__(self, vertexNum, graph, vertices):
+		self.graph = graph
+		self.vertices = vertices
+		self.vertexNum = vertexNum
+		self.MST = []
+	def printSolution(self):
+		print("Edge : Weight")
+		for s, d, w in self.MST:
+			print("%s -> %s: %s" % (s, d, w))
+	def primsAlgo(self):
+		visited = [0]*self.vertexNum
+		edgeNum=0
+		visited[0]=True
+		while edgeNum<self.vertexNum-1:
+			min = sys.maxsize
+			for i in range(self.vertexNum):
+				if visited[i]:
+					for j in range(self.vertexNum):
+						if ((not visited[j]) and self.graph[i][j]):
+							if min > self.graph[i][j]:
+								min = self.graph[i][j]
+								s = i
+								d = j
+			self.MST.append([self.vertices[s], self.vertices[d], self.graph[s][d]])
+			visited[d] = True
+			edgeNum += 1
+		self.printSolution()
+def add_vertex(v):
+	global graph
+	global vertices_no
+	global vertices
+	if v in vertices:
+		print("Vertex ",v," already exists")
+	else:
+		vertices_no = vertices_no+1
+		vertices.append(v)
+		if vertices_no >1 :
+			for vertex in graph:
+				vertex.append(0)
+		temp=[]
+		for i in range(vertices_no):
+			temp.append(0)
+		graph.append(temp)
+def add_edge(v1,v2,e):
+	global graph
+	global vertices_no
+	global vertices
+	if v1 not in vertices:
+		print("Vertex ",v1," does not exist.")
+	elif v2 not in vertices:
+		print("Vertex ",v2," does not exist.")
+	else:
+		index1=vertices.index(v1)
+		index2=vertices.index(v2)
+		graph[index1][index2]=e
+def print_graph():
+	global graph
+	global vertices_no
+	for i in range(vertices_no):
+		for j in range(vertices_no):
+			if graph[i][j] !=0:
+				print(vertices[i],"-> ",vertices[j],"edge weight",graph[i][j])
+vertices=[]
+vertices_no=0
+graph=[]
+k=int(input("Enter no.of vertices: "))
+for i in range(k):
+	add_vertex(input("Enter vertex name: "))
+l=int(input("Enter no.of edges: "))
+for i in range(l):
+	add_edge(input("Enter vertex: "),input("Enter vertex: "),int(input("Edge weight: ")))
+print_graph()
+print("Internal representation: ",graph)
+g = Graph(k, graph, vertices)
+g.primsAlgo()

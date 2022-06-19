@@ -1,0 +1,33 @@
+class Evaluate_postfix: 
+	def __init__(self, capacity): 
+		self.items = [] 
+		self.top = -1
+		self.capacity = capacity 
+
+	def isEmpty(self): 
+		if(self.top==-1):
+			return True
+		else:
+			return False
+	def peek(self): 
+		return self.items[-1]
+	def pop(self): 
+		if not self.isEmpty():
+			self.top-=1
+			return self.items.pop()
+	def push(self, op):
+		self.top+=1
+		self.items.append(op)
+	def evaluatePostfix(self, exp): 
+		for i in exp:
+			if i.isdigit():
+				self.push(i)
+			else:
+				value_1=self.pop()
+				value_2=self.pop()
+				ans=str(eval(value_2+i+value_1))
+				self.push(ans)
+		return int(self.pop())		
+exp = input('Enter the postfix expression: ')
+s = Evaluate_postfix(len(exp)) 
+print ((s. evaluatePostfix(exp)))

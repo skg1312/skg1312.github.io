@@ -1,0 +1,49 @@
+def insertion():	
+	value=int(input("Insert element: "))	
+	bt.append(value)
+def delete():	
+	del_v=int(input("Enter node to delete: "))
+	if(del_v in bt):
+		bt.remove(del_v)
+	else:		
+		print("{} not found".format(del_v))
+def search():
+	search_value=int(input("Enter node to search: "))	
+	if(search_value in bt):
+		print("{} is found".format(search_value))	
+	else:
+		print("{} not found".format(search_value))
+def inorderTraversal():
+	bt.sort()
+	print("Inorder traversal: ")	
+	for i in bt:	
+		print(i)
+bt=[]
+while True:
+	print("1 for Insertion")
+	print("2 for Deletion")	
+	print("3 for search")
+	print("4 Inorder traversal")
+	input_value=int(input())
+	if(input_value==1):		
+		insertion()	
+		operation=input("do you want to do more operations(Y/N): ")	
+		if(operation=='n'):	
+			break
+	elif(input_value==2):
+		delete()
+		operation=input("do you want to do more operations(Y/N): ")
+		if(operation=='n'):	
+			break	
+	elif(input_value==3):	
+		search()
+		operation=input("do you want to do more operations(Y/N): ")		
+		if(operation=='n'):
+			break	
+	elif(input_value==4):		
+		inorderTraversal()	
+		operation=input("do you want to do more operations(Y/N): ")	
+		if(operation=='n'):
+			break	
+	else:	
+		print("wrong option")

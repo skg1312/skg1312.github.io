@@ -1,0 +1,73 @@
+def method():
+	print("1 Create")
+	print("2 Count")	
+	print("3 Push")	
+	print("4 Append")	
+	print("5 Search")
+	print("6 Delete at beginning")
+	print("7 Display")
+	print("8 Delete at end")
+	print("9 Delete at position")	
+	print("99 Exit:")
+	result=int(input())
+	return result
+lis=[]
+res=method()
+while (res==1 or res==2 or res==3 or res==4 or res==5 or res==6 or res==7 or res==8 or res==99):	
+	if res==1:
+		print("Creating DLL with one node")
+		var=int(input("Enter Data for the first node: "))	
+		lis.append(var)
+		res=method()
+	if res==3:		
+		print("Insering nodes at the beginning")
+		var=input("Enter nodes in DLL separated by comma: ").split(",")		
+		var1=tuple(var)
+		for i in range(len(var1)):
+			lis.insert(0,int(var1[i]))	
+		res=method()
+	if res==4:
+		print("Inserting nodes at the end")
+		var=input("Enter nodes in DLL separated by comma: ").split(",")
+		var1=tuple(var)
+		for i in var1:
+			lis.append(i)
+		res=method()
+	if res==5:
+		print("Searching for given data")	
+		var=int(input("Enter the node to be searched: "))
+		index=lis.index(var)
+		print("Given node exists at position:",index+1)
+		res=method()
+	if res==6:	
+		print("Deleting the first node data")
+		print("DLL after removing 1st node:")
+		lis.pop(0)
+		for i in lis:
+			print(i,end=" ")
+		print()
+		res=method()
+	if res==7:	
+		for i in lis:			
+			print(i,end=" ")
+		print()	
+		res=method()
+	if res==8:	
+		print("Deleting the last node")
+		print("DLL after removing last node:")		
+		lis.pop()	
+		for i in lis:	
+			print(i,end=" ")	
+		print()
+		res=method()
+	if res==9:		
+		print("Deleting node at given position")
+		var=int(input("Enter the position of the node to be deleted: "))	
+		lis.pop(var-1)
+		print("Doubly linked list after removing node no:",var)	
+		for i in lis:		
+			print(i,end=" ")	
+		res=method()	
+	if res==99:
+		print("Thank you")	
+		break

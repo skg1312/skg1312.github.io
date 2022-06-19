@@ -1,0 +1,13 @@
+l=[]
+while True:
+	a=input("Enter element, 'XXX' to end: ")
+	if a=='XXX':
+		break
+	l.append(a)
+print("Initial stack")
+print(l)
+print("Elements poped from stack:")
+for i in range(3):
+	print(l.pop())
+print("Stack after elements are poped:")
+print(l)

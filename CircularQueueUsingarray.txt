@@ -1,0 +1,37 @@
+def Enqueue_fun(count):
+	element = int(input("Enter Element ")) 
+	if count > size_que :
+		print(" Queue is Full")
+	else:
+		q_elements.append(element)
+def Dequeue_fun(q_elements):
+	value = q_elements[0]  
+	q_elements.remove(value)
+	print("Element is Successfully Removed")
+def Display_fun(q_elements):
+	length_of_elements = len(q_elements)
+	if length_of_elements == size_que:
+		print("Elements in the circular Queue are:")  
+		for i in q_elements:
+			print(i) 
+		print("Queue is Full")
+	elif length_of_elements == 0:    
+		print("Queue is Empty")
+	else:
+		print("Elements in the circular Queue are:")  
+		for i in q_elements:
+			print(i)
+size_que = int(input("Enter size of Queue "))
+q_elements = []
+count = 0
+while True:	
+	select_option = int(input("Select a operarion 1.Enqueue 2.Dequeue 3.Display 4.Quit "))    
+	if select_option == 1: 
+		count = count + 1  
+		Enqueue_fun(count)
+	elif select_option == 2: 
+		Dequeue_fun(q_elements)
+	elif select_option == 3:    
+		Display_fun(q_elements)
+	elif select_option == 4:
+		break
