@@ -1,32 +1,226 @@
 <!doctype html>
-<!--1 FRGNPONCode : import java.util.Scanner;  public class Palindrome { public static void main(String args[]) {int n,r,s=0,i,v,j;  Scanner sc = new Scanner(System.in);  System.out.print("Enter any number:");v = sc.nextInt(); n=v;  while ( n>0) {  r=n%10; s=s*10+r; n=n/10;}System.out.println("Reverse of a number is "+s);if (v==s) System.out.println("Given number "+v+" is Palindrome");else  System.out.println("Given number "+v+" is Not Palindrome");}}
-2 FS Code: class FibonacciSeries { public static void main(String args[]) {  int n=Integer.parseInt(args[0]);int a=0,b=1;  System.out.print(a+" "+b);  int c=a+b;  while(c<=n) { System.out.print(" "+ c);a=b;  b=c;  c=a+b;  }}}
-3 Exp. Name: Write a Java program that prints out all prime numbers up to given integer.Code: import java.util.*; class PrintPrime {  public static void main(String args[]) {int n,i,j;  System.out.print("Enter a number: "); Scanner s = new Scanner(System.in);n= s.nextInt(); System.out.print("Prime numbers are: ");  for(i=1;i<=n;i++) {int c=0;  for(j=1;j<=i;j++) { if(i%j==0) {  c+=1; }}  if(c==2)  System.out.print(i+" ");}}}
-4 MOTM Code: import java.util.Scanner; public class MultiplicationOfMatrixMain {public static void main(String[] args) {  Scanner s = new Scanner(System.in);MultiplicationOfMatrix multiplier = new MultiplicationOfMatrix();System.out.println("Matrix 1:");  int[][] m1 = readMatrix(s); System.out.println("Matrix 2:");int[][] m2 = readMatrix(s); int[][] multi = multiplier.multiplication(m1, m2);if (multi == null) {  System.out.println("Multiplication of matrices is not possible");} else {  System.out.println("Multiplication of the two given matrices is:");for (int i = 0; i < multi.length; i++) {  int c = multi[i].length;  for (int j = 0; j < c; j++) {String spacer = j == c - 1 ? "\n" : " ";  System.out.print(multi[i][j] + spacer);}}}}public static int[][] readMatrix(Scanner s) { System.out.print("Enter number of rows: ");int r = s.nextInt();  System.out.print("Enter number of columns: ");  int c = s.nextInt();int[][] m = new int[r][c];  System.out.println("Enter " + c + " numbers separated by space");for (int i = 0; i < r; i++) { System.out.print("Enter row " + (i + 1) + ": ");for (int j = 0; j < c; j++) { m[i][j] = s.nextInt();}}  return m;}}
-5 Exp. Name: Find minimum and maximum numbers from given arrayCode:   import java.util.*; public class MinMaxArray {  public static void main(String[] args) {int n,ae,max,min; Scanner s=new Scanner(System.in); System.out.print("Enter number of elements: ");n=s.nextInt();  int a[]=new int[n]; System.out.print("Enter array elements: ");for(int i=0;i<n;i++){ ae = s.nextInt(); a[i]=ae;} max=min=a[0];for(int i=0;i<n;i++) {  if(a[i]>max) {  max=a[i];}  if(a[i]<min) {  min=a[i];}}System.out.println("Mimimum element in array is: "+min);  System.out.println("Maximum element in array is: "+max);}}
-6 FVOBCO Code: import java.util.*; class BoxDemo { double l,b,h;BoxDemo(double le,double br,double he) {  l=le; b=br; h=he; }public void vol() { System.out.println("Volume is "+(l*b*h)); }public static void main(String args[]) {  double l1,b1,h1;  Scanner sc=new Scanner(System.in);System.out.println("Enter the length of box:"); l1=sc.nextDouble();System.out.println("Enter the breadth of box:");  b1=sc.nextDouble();System.out.println("Enter height of box:"); h1=sc.nextDouble();BoxDemo obj=new BoxDemo(l1,b1,h1);  obj.vol();}}
-7 Exp. Name: Create static methods to perform arithmetic operations and access them in other classes.Code: import java.util.Scanner; class Arithematic { public static void main(String args[]) {int a,b,c;  Scanner sc=new Scanner(System.in);  System.out.print("Enter a number: ");a=sc.nextInt(); System.out.print("Enter another number: ");b=sc.nextInt(); System.out.println("Addition of "+a+" and "+b+" is: "+(a+b));System.out.println("Subtraction of "+a+" and "+b+" is: "+(a-b));System.out.println("Multiplication of "+a+" and "+b+" is: "+(a*b));System.out.println("Division of "+a+" and "+b+" is: "+(a/b));System.out.println("Modulo of "+a+" and "+b+" is: "+(a%b));}}
-8 CBV Code: import java.util.Scanner; class SwapDemo {  public static void swap(int a, int b) {int temp=a; a=b;  b=temp;}public static void main (String args[]) { System.out.println("Enter value 1:");Scanner s=new Scanner(System.in); int n=s.nextInt();System.out.println("Enter value 2:"); Scanner v = new Scanner(System.in); int p=v.nextInt()System.out.println("Before swapping value of a is "+n+" value of b is "+p);System.out.println("After swapping value of a is "+n+" value of b is "+p);}}
-9 CBR Code: import java.util.Scanner; class SwapDemo1 { int a,b;  SwapDemo1(int a,int b) {this.a=a; this.b=b;  }  void swap(SwapDemo1 o) {  int temp; temp=o.a; this.a=o.b; this.b=temp;  }public static void main(String[] args) {  int a,b;  Scanner sc=new Scanner(System.in);System.out.println("Enter value 1:"); a=sc.nextInt();System.out.println("Enter value 2:"); b=sc.nextInt();SwapDemo1 obj=new SwapDemo1(a,b);System.out.println("Before swapping value of a is "+obj.a+" value of b is "+obj.b);obj.swap(obj);System.out.println("After swapping value of a is "+obj.a+" value of b is "+obj.b);}}
-10 MO Code: class Addition {  public void add(int x,int y) {  System.out.println("Sum of "+x+" and "+y+" : "+(x+y));}public void add(float x,float y) {  System.out.println("Sum of "+x+" and "+y+" : "+(x+y));}public void add(int x,float y) {  System.out.println("Sum of "+x+" and "+y+" : "+(x+y));}public void add(float x,double y,double z) { System.out.println("Sum of "+x+", "+y+" and "+z+" : "+(x+y+z));}public static void main(String[] args) {  int a=Integer.parseInt(args[0]);int b=Integer.parseInt(args[1]);  float c=Float.parseFloat(args[2]);float d=Float.parseFloat(args[3]);  double e=Double.parseDouble(args[4]);double f=Double.parseDouble(args[5]); Addition obj=new Addition();  obj.add(a,b); obj.add(c,d); obj.add(b,d);obj.add(c,e,f);}}
-11 CO Code: class Box { double l,b,h; Box() {l=-1;b=-1;h=-1;}Box(double length) {l=b=h=length;}Box(double width,double height,double depth) {l=width;b=height;h=depth;}public double volume() {return (l*b*h);}public static void main(String args[]) {double l,b,h;int n=args.length;if(n==3) {l=Double.parseDouble(args[0]);b=Double.parseDouble(args[1]);h=Double.parseDouble(args[2]);System.out.println("Volume of Box("+l+", "+b+", "+h+") is : "+new Box(l,b,h).volume());} else if(n==1) {l=Double.parseDouble(args[0]);System.out.println("Volume of Box("+l+") is : "+new Box(l).volume());} else {System.out.println("Volume of Box() is : "+new Box().volume());} }}
-12  Exp. Name: Write a Java program to implement Multilevel Inheritance Code: class Student {int id; String name;void setData(int id,String name) {this.id=id;this.name=name;}void displayData() System.out.println("Id : "+id);System.out.println("Name : "+name);}}class Marks extends Student {float javaMarks,cMarks,cppMarks;void setMarks(float javaMarks,float cMarks,float cppMarks) {this.javaMarks=javaMarks;this.cMarks=cMarks;this.cppMarks=cppMarks;}void getMarks() {System.out.println("Java marks : "+javaMarks);System.out.println("C marks : "+cMarks);System.out.println("Cpp marks : "+cppMarks);}}class Result extends Marks {float total,avg;void compute() {total=javaMarks+cMarks+cppMarks;avg=total/3;}void showResult() {System.out.println("Total : "+total);System.out.println("Avg : "+avg);}}class MultilevelInheritanceDemo {public static void main(String args[]) {int id = Integer.parseInt(args[0]);String name = args[1];float javaMarks = Float.parseFloat(args[2]);float cMarks = Float.parseFloat(args[3]);float cppMarks = Float.parseFloat(args[4]);Result obj=new Result();obj.setData(id,name);obj.setMarks(javaMarks,cMarks,cppMarks);obj.compute();obj.displayData();obj.getMarks();obj.showResult();}}
-13 Exp. Name: Write a Java program to achieve concept of Method OverridingCode: class Bank {float calculateInterest(float principal, int time) {return 0;}}class SBI extends Bank {private static final float INTEREST_RATE = 10.8f;float calculateInterest(float principal,int time) {return (principal*INTEREST_RATE*time)/100;}}class ICICI extends Bank {private static final float INTEREST_RATE = 11.6f;float calculateInterest(float principal,int time) {return (principal*INTEREST_RATE*time)/100;}}class AXIS extends Bank {private static final float INTEREST_RATE = 12.3f;float calculateInterest(float principal,int time) {return (principal*INTEREST_RATE*time)/100;}}public class TestOverriding {public static void main(String[] args) {Bank sbiBank = new SBI();Bank iciciBank = new ICICI();Bank axisBank = new AXIS();float principal = Float.parseFloat(args[0]);int time = Integer.parseInt(args[1]);System.out.println("SBI rate of interest = " + sbiBank.calculateInterest(principal,time));System.out.println("ICICI rate of interest = " + iciciBank.calculateInterest(principal,time));System.out.println("AXIS rate of interest = " + axisBank.calculateInterest(principal,time));}}
-14 UDPAO P1,p2: import p1.*;import java.util.*;import p2.*;class Operations {public static void main(String args[]) {int num=0,a=0,b=0;Arithmatic c = new Arithmatic();Scanner s = new Scanner(System.in);Calculations o = new Calculations();System.out.println(" 1. addition \n 2. subtraction \n 3. multiplication \n 4. division\n 5. square \n 6. cube \n 7. square-root ");System.out.println(" Enter your Choice:");num=s.nextInt();if(num>0 && num<5) {System.out.println("Enter Two Integer Numbers: ");a=s.nextInt();b=s.nextInt();} else if(num>=5 && num<=7) {System.out.println("Enter an Integer Number: ");a=s.nextInt();} else {System.out.println("Invalid choice");System.exit(0);}switch(num) {case 1 : c.addition(a,b);break;case 2 : c.subtraction(a,b);break;case 3 : c.multiplication(a,b);break;case 4 : c.division(a,b);break;case 5 : o.square(a);break;case 6 : o.cube(a);break;case 7 : o.square_root(a);break;}}}
-package p1;public class Arithmatic {public void addition(int a,int b) {System.out.println("Addition of "+a+" and "+b+" is : "+(a+b));}public void subtraction(int a,int b) {System.out.println("Subtraction of "+a+" and "+b+" is : "+(a-b));}public void multiplication(int a,int b) {System.out.println("Multiplication of "+a+" and "+b+" is : "+(a*b));}public void division(int a,int b) {System.out.println("Division of "+a+" and "+b+" is : "+(a/b));}}
-package p2;public class Calculations {public void square(int a) {System.out.println("Square of "+a+" is : "+(double)a*a);}public void cube(int a) {System.out.println("Cube of "+a+" is : "+(double)a*a*a);}public void square_root(int a) {System.out.println("Square-root of "+a+" is : "+(double)Math.sqrt(a));}}
-15 Exp. Name: Program to implement abstraction, create a class with one abstractmethod and implementing them in another class.Code: import java.util.Scanner;abstract class Figure{double dim1,dim2;Figure(double d1,double d2){dim1=d1;dim2=d2;}abstract double area();}class Rectangle extends Figure{Rectangle(double d1,double d2){super(d1,d2);}double area(){return dim1*dim2;}}class Triangle extends Figure{Triangle(double d1,double d2){super(d1,d2);}double area(){return 0.5*dim1*dim2;}}class CalcArea{public static void main(String a[]){Scanner s = new Scanner (System.in);System.out.print("Enter length of rectangle: ");double l = s.nextDouble();System.out.print("Enter breadth of rectangle: ");double w = s.nextDouble();Figure f = new Rectangle(l,w);System.out.println("The area of rectangle with sides "+l+" and "+w+" is: "+f.area());System.out.print("Enter base of triangle: "); double b = s.nextDouble();System.out.print("Enter height of triangle: ");double h = s.nextDouble();f = new Triangle(b,h);System.out.println("The area of rectangle with sides "+b+" and "+h+" is: "+f.area());}}
-16 Exp. Name: Write a Java program to implement multiple-inheritanceCode:  import java.util.Scanner;interface l1{void SetData(int l,int b);}interface l2{int perimeter();int area();}class MultipleInheritance implements l1,l2{int l,b;public void SetData(int i,int j){l=i;b=j;}public int perimeter(){if(l==b){return 4*l;} elsereturn 2*(l+b);}public int area(){return l*b;}public static void main(String[] args){Scanner s = new Scanner(System.in);System.out.print("Enter length of rectangle 1: ");int l=s.nextInt();System.out.print("Enter breadth of rectangle 1: ");int b=s.nextInt();MultipleInheritance mi1 = new MultipleInheritance();mi1.SetData(l,b);System.out.println("Perimeter of rectangle 1 is: "+mi1.perimeter());System.out.println("Area of rectangle 1 is: "+mi1.area());System.out.print("Enter length of rectangle 2: ");int l1 = s.nextInt();System.out.print("Enter breadth of rectangle 2: ");int b1 = s.nextInt();MultipleInheritance mi2 = new MultipleInheritance();mi2.SetData(l1,b1);System.out.println("Perimeter of rectangle 2 is: "+mi2.perimeter());System.out.println("Area of rectangle 2 is: "+mi2.area());}}
-17 Exp. Name: Write a Java program to sort a list of names in ascending orderCode: import java.util.Scanner;class SortNames{public static void main(String[] args){int n;String temp;Scanner s = new Scanner(System.in);System.out.print("Enter the number of names you want to enter: ");n = s.nextInt();String names[] = new String[n];Scanner s1 = new Scanner(System.in);System.out.print("Enter the names: ");for(int i=0;i<n;i++){names[i] = s1.nextLine();}for(int i=0;i<n;i++){for(int j=i+1;j<n;j++){if(names[i].compareTo(names[j])>0){temp = names[i];names[i] = names[j];names[j] = temp;}}}System.out.print("Sorted names:");for(int i=0;i<=n-1;i++){System.out.print(names[i]+" ");}}}
-18 Exp. Name: Program to check the given String is Palindrome or notCode: public class PalindromeOrNot{public static void main(String args[]){String s = args[0];String r = "";for(int i=s.length()-1;i>=0;i--){r = r + s.charAt(i);}if(s.equals(r)){System.out.println("The given string "+s+" is a palindrome");} else{System.out.println("The given string "+s+" is not a palindrome");}}}
-19  Exp. Name: Write a Java program that handles multiple exceptions.Code: import java.lang.*;import java.util.*;import java.io.*;class CatchMultipleException {public static void main(String args[]) {int num1, num2;int arr[] = new int[10];Scanner sc = new Scanner(System.in);try {System.out.print("Enter a value for numerator: ");num1=sc.nextInt();System.out.print("Enter a value for denominator: ");num2=sc.nextInt();arr[10] = num1/num2;/* Divide the numerator and denominator*/ ;}catch(ArithmeticException ae) {System.out.println("Exception caught: "+ae.getMessage());}catch(ArrayIndexOutOfBoundsException ai) {System.out.println("Exception caught: "+ai.getMessage());}}}
-20 Exp. Name: Create a user exception and then handles that exception in other program.Code: import java.util.*;import java.lang.*;class InvalidWeight extends Exception {public InvalidWeight(String str) {super(str);}}import java.util.Scanner;public class CheckWeight{public static void validWeight(int wt){try{if(wt>100)throw new InvalidWeight(wt+" is invalid weight");elseSystem.out.println(wt+" is the valid weight.");}catch(InvalidWeight iw){System.out.println("Exception caught: "+iw.getMessage());} }public static void main(String ar[]){Scanner s = new Scanner(System.in);System.out.print("Enter weight: ");int wt = s.nextInt();validWeight(wt);}}
-21 Exp. Name: Write a Java program that reads a file name from the user then displays informationCode: import java.io.*;class FileInfo{public static void main(String[] args) throws Exception{BufferedReader br = new BufferedReader(new InputStreamReader(System.in));System.out.print("Enter file name(text1.txt or text2.txt): ");String fname = br.readLine();File f = new File(fname);System.out.println("File existance: "+f.exists());System.out.println("File writable: "+f.canWrite());System.out.println("File readable: "+f.canRead());System.out.println("File length(in bytes): "+f.length()+" Bytes");}}
-22  Exp. Name: Count characters, words and lines in a file. Code: import java.util.*;import java.io.*;class CountFile{public static void main(String args[])throws Exception{Scanner sc = new Scanner(System.in);System.out.print("Enter file name(text1.txt or text2.txt): ");String fname = sc.next();int cno = 0;int lno = 0;int wno = 0;BufferedReader br = null;try{br = new BufferedReader(new FileReader(fname));}catch(FileNotFoundException fe){System.out.println("File not found.");}String str;while((str=br.readLine())!=null){lno++;String words[] = str.split(" ")for(String s:words){cno = cno+s.length();}wno = wno+words.length;}System.out.println("Lines: "+lno);System.out.println("Words: "+wno);System.out.println("Characters: "+cno);br.close();}}
-23 Exp. Name: Write a Java program demonstrating the usage of Threads Code: public class ThreadDemo {public static void main(String[] args) throws Exception {Thread t1 = new Thread(new Printer("Good morning", 1, 2));Thread t2 = new Thread(new Printer("Hello", 1, 2));Thread t3 = new Thread(new Printer("Welcome", 3, 1));t1.start();t2.start();t3.start();t1.join();t2.join();t3.join();System.out.println("All the three threads t1, t2 and t3 have completed execution.");}}class Printer implements Runnable {String str;int count;int not;Printer(String str,int count,int not){this.str = str;this.count = count;this.not = not;}public void run(){int time = count*1000;try{Thread.sleep(time);for(int i=0;i<not;i++)System.out.println(str);}catch(InterruptedException ie){System.out.println(ie);}}}
-24 Exp. Name: Java program that correctly implements the producer consumer problem Code: class Q{int n;boolean valueSet = false;synchronized int get(){while(!valueSet)try{wait();}catch(InterruptedException e){System.out.println("InterruptedException caught");}System.out.println("Got: "+n);valueSet = false;notify();return n;}synchronized void put(int n){while(valueSet)try{wait();}catch(InterruptedException e){System.out.println("InterruptedException caught");}this.n = n;valueSet = true;System.out.println("Put: "+n);notify();}}class Producer implements Runnable{Q q;int n;boolean stop = false;Producer(Q q,int n){this.q = q;this.n = n;}public void run(){for(int i=0;i<n;i++){q.put(i);}}}class Consumer implements Runnable{Q q;int n;boolean stop = false;Consumer(Q q,int n){this.q = q; this.n = n;}public void run(){for(int i=0;i<n;i++){q.get();}}}class ProdCons{ public static void main(String args[])throws Exception{Q q = new Q();int n = Integer.parseInt(args[0]);Producer p = new Producer(q,n);Consumer c = new Consumer(q,n);Thread t = new Thread(p);Thread t1 = new Thread(c);t.start();t1.start();System.out.println("Producer-Consumer problem using the concept of Interthread Communication");}}
-25 Exp. Name: Iteration on ArrayList (hash set)Code: import java.util.*;class ArrayListIterationDemo{public static void main(String args[]){ArrayList<String>obj = new ArrayList<String>();for(int i=0;i<args.length;i++){obj.add(args[i]);}System.out.println(obj);Collections.sort(obj);System.out.println("After sorting : "+obj);}}
-26 Exp. Name: Iteration on ArrayList (treeset)Code: import java.util.*;class ArrayListIterationDemo {public static void main(String args[]) {ArrayList<String> obj = new ArrayList<String>();for(int i=0;i<args.length;i++) {obj.add(args[i]);}System.out.println(obj);HashSet<String> has = new HashSet(obj);System.out.println("List after removing duplicate elements:");for(String l:has) {System.out.println(l);}}}
-27 Exp. Name: Write a java program to traversing elements in descending order in TreeSet.Code: import java.util.*;class HashSetMethodsDemo{public static void main(String args[]) throws Exception{TreeSet<Object> ints = new TreeSet<Object>();for(int i=0;i<args.length;i++){ints.add(args[i]);}TreeSet<Object> intsReverse = (TreeSet<Object>)ints.descendingSet();System.out.println("Traversing element through Iterator in descending order");for(Object ob : intsReverse){System.out.println(ob);}}}
--->
+<!--[if lt IE 7]>
+     
+<html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="">
+<!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sk-g</title>
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/jquery.fancybox.css">
+<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/responsive.css">
+<link rel="stylesheet" href="css/animate.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+</head>
+
+<body>
+<!-- Header Section -->
+<section class="banner" role="banner"> 
+  <!-- Navigation Section -->
+  <header id="header">
+    <div class="header-content clearfix"> <a class="logo" href="#">Sk</a>
+      <nav class="navigation" role="navigation">
+        <ul class="primary-nav">
+          <li><a href="#introduction">About Me</a></li>
+          <li><a href="#works">Latest Works</a></li>
+          <li><a href="#contact">Contact Me</a></li>
+        </ul>
+      </nav>
+      <a href="#" class="nav-toggle">Menu<span></span></a> </div>
+  </header>
+  <!-- Navigation Section --> 
+  <!-- Banner Section -->
+  <div class="container">
+    <div class="col-md-7 banner-inner-wrapper">
+      <div class="banner-text">
+        <h1>I'm Saikumar G. A Student of RGMCET</h1>
+        <p>More interested in innovation and creation.</p>
+        <a href="#" class="btn">Find out more</a> </div>
+      <!-- banner text --> 
+    </div>
+  </div>
+  <!-- Banner Section --> 
+</section>
+<!-- Header Section --> 
+<!-- Intro Section -->
+<section id="introduction" class="section introduction">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 col-sm-6">
+        <div class="intro-content">
+          <h1>Don't Compare with anyone Be Unique.</h1>
+        </div>
+      </div>
+      <div class="col-md-5 col-sm-6">
+        <div class="intro-content">
+          <p>More interested in doing Coding and playing with circuits.</p>
+          <p>Also making playing Games and Hacking Tools.</p>
+          <p>Also do Editing and making BGM's and short films and writter&director also. </p>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6">
+        <div class="intro-content">
+          <h4>my archieves</h4>
+          <ul>
+            <li> - Web & App design and development</li>
+            <li> - Game playing and development</li>
+            <li> - Playing with circuits</li>
+            <li> - Youtuber Content creator</li>
+            <li> - Usage of Hacking Tools</li>
+            <li> - Film Shoots & Production</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Intro Section --> 
+
+<!-- work section -->
+<section id="works" class="works section no-padding">
+  <div class="container-fluid">
+    <div class="row no-gutter">
+      <div class="col-lg-2 col-md-4 col-sm-4 work"> <a href="images/work-1.jpg" class="work-box"> <img src="images/work-1.jpg" alt="">
+        <div class="overlay">
+          <div class="overlay-caption">
+            <p><i class="fa fa-search-plus fa-2x"></i></p>
+          </div>
+        </div>
+        <!-- overlay --> 
+        </a> </div>
+      <div class="col-lg-2 col-md-4 col-sm-4 work"> <a href="images/work-2.jpg" class="work-box"> <img src="images/work-2.jpg" alt="">
+        <div class="overlay">
+          <div class="overlay-caption">
+            <p><i class="fa fa-search-plus fa-2x"></i></p>
+          </div>
+        </div>
+        <!-- overlay --> 
+        </a> </div>
+      <div class="col-lg-2 col-md-4 col-sm-4 work"> <a href="images/work-3.jpg" class="work-box"> <img src="images/work-3.jpg" alt="">
+        <div class="overlay">
+          <div class="overlay-caption">
+            <p><i class="fa fa-search-plus fa-2x"></i></p>
+          </div>
+        </div>
+        <!-- overlay --> 
+        </a> </div>
+      <div class="col-lg-2 col-md-4 col-sm-4 work"> <a href="images/work-4.jpg" class="work-box"> <img src="images/work-4.jpg" alt="">
+        <div class="overlay">
+          <div class="overlay-caption">
+            <p><i class="fa fa-search-plus fa-2x"></i></p>
+          </div>
+        </div>
+        <!-- overlay --> 
+        </a> </div>
+      <div class="col-lg-2 col-md-4 col-sm-4 work"> <a href="images/work-5.jpg" class="work-box"> <img src="images/work-5.jpg" alt="">
+        <div class="overlay">
+          <div class="overlay-caption">
+            <p><i class="fa fa-search-plus fa-2x"></i></p>
+          </div>
+        </div>
+        <!-- overlay --> 
+        </a> </div>
+      <div class="col-lg-2 col-md-4 col-sm-4 work"> <a href="images/work-6.jpg" class="work-box"> <img src="images/work-6.jpg" alt="">
+        <div class="overlay">
+          <div class="overlay-caption">
+            <p><i class="fa fa-search-plus fa-2x"></i></p>
+          </div>
+        </div>
+        <!-- overlay --> 
+        </a> </div>
+      <div class="col-lg-2 col-md-4 col-sm-4 work"> <a href="images/work-7.jpg" class="work-box"> <img src="images/work-7.jpg" alt="">
+        <div class="overlay">
+          <div class="overlay-caption">
+            <p><i class="fa fa-search-plus fa-2x"></i></p>
+          </div>
+        </div>
+        <!-- overlay --> 
+        </a> </div>
+      <div class="col-lg-2 col-md-4 col-sm-4 work"> <a href="images/work-8.jpg" class="work-box"> <img src="images/work-8.jpg" alt="">
+        <div class="overlay">
+          <div class="overlay-caption">
+            <p><i class="fa fa-search-plus fa-2x"></i></p>
+          </div>
+        </div>
+        <!-- overlay --> 
+        </a> </div>
+      <div class="col-lg-2 col-md-4 col-sm-4 work"> <a href="images/work-9.jpg" class="work-box"> <img src="images/work-9.jpg" alt="">
+        <div class="overlay">
+          <div class="overlay-caption">
+            <p><i class="fa fa-search-plus fa-2x"></i></p>
+          </div>
+        </div>
+        <!-- overlay --> 
+        </a> </div>
+      <div class="col-lg-2 col-md-4 col-sm-4 work"> <a href="images/work-10.jpg" class="work-box"> <img src="images/work-10.jpg" alt="">
+        <div class="overlay">
+          <div class="overlay-caption">
+            <p><i class="fa fa-search-plus fa-2x"></i></p>
+          </div>
+        </div>
+        <!-- overlay --> 
+        </a> </div>
+      <div class="col-lg-2 col-md-4 col-sm-4 work"> <a href="images/work-11.jpg" class="work-box"> <img src="images/work-11.jpg" alt="">
+        <div class="overlay">
+          <div class="overlay-caption">
+            <p><i class="fa fa-search-plus fa-2x"></i></p>
+          </div>
+        </div>
+        <!-- overlay --> 
+        </a> </div>
+      <div class="col-lg-2 col-md-4 col-sm-4 work"> <a href="images/work-12.jpg" class="work-box"> <img src="images/work-12.jpg" alt="">
+        <div class="overlay">
+          <div class="overlay-caption">
+            <p><i class="fa fa-search-plus fa-2x"></i></p>
+          </div>
+        </div>
+        <!-- overlay --> 
+        </a> </div>
+    </div>
+  </div>
+</section>
+<!-- work section --> 
+
+<!-- footer section -->
+<footer id="contact" class="footer">
+  <div class="container">
+    <div class="col-md-4">
+      <h4>Contact</h4>
+      <p> Anantapuram.<br>
+        Call: 9676657083 <br>
+        Email : <a href="mailto:info@sk-g.tech"> info@sk-g.tech </a></p>
+    </div>
+    <div class="col-md-3">
+      <h4>Social presense</h4>
+      <ul class="footer-share">
+        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+      </ul>
+    </div>
+    <div class="col-md-5">
+      <p>© 2022 All rights reserved. All Rights Reserved<br>
+        Made <i class="Sk"></i> by <a href="http://www.sk-g.tech/">Sk</a></p>
+    </div>
+  </div>
+</footer>
+<!-- footer section --> 
+
+<!-- JS FILES --> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> 
+<script src="js/bootstrap.min.js"></script> 
+<script src="js/jquery.fancybox.pack.js"></script> 
+<script src="js/retina.min.js"></script> 
+<script src="js/modernizr.js"></script> 
+<script src="js/main.js"></script>
+</body>
+
 </html>
