@@ -13,6 +13,20 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     }
+
+    // Custom Heart Emoji Cursor
+    // Create a small canvas and draw a red heart emoji
+    const canvas = document.createElement('canvas');
+    canvas.width = 40;
+    canvas.height = 40;
+    const ctx = canvas.getContext('2d');
+    ctx.font = "32px serif";
+    ctx.textAlign = "center";
+    ctx.textBaseline = "middle";
+    ctx.fillText("❤️", 20, 22);
+
+    const heartCursor = `url(${canvas.toDataURL()}), auto`;
+    document.body.style.cursor = heartCursor;
 });
 
 // Scroll reveal animation for sections
