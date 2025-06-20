@@ -15,7 +15,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Custom Heart Emoji Cursor
-    // Create a small canvas and draw a red heart emoji
     const canvas = document.createElement('canvas');
     canvas.width = 40;
     canvas.height = 40;
@@ -24,9 +23,58 @@ document.addEventListener("DOMContentLoaded", function () {
     ctx.textAlign = "center";
     ctx.textBaseline = "middle";
     ctx.fillText("❤️", 20, 22);
-
     const heartCursor = `url(${canvas.toDataURL()}), auto`;
     document.body.style.cursor = heartCursor;
+
+    // FLOATING ANIMATION FOR ALL ELEMENTS
+    // Add a class to every element in <body> except <script> and <style>
+    function addFloatingClassToAll(element) {
+        if (
+            element.nodeType === 1 && // ELEMENT_NODE
+            element.tagName !== "SCRIPT" &&
+            element.tagName !== "STYLE"
+        ) {
+            element.classList.add('floating-animate');
+            // Recursively apply to children
+            for (const child of element.children) {
+                addFloatingClassToAll(child);
+            }
+        }
+    }
+    addFloatingClassToAll(document.body);
+
+    // Inject floating animation CSS if not already present
+    if (!document.getElementById("floating-animate-style")) {
+        const style = document.createElement("style");
+        style.id = "floating-animate-style";
+        style.innerHTML = `
+        .floating-animate {
+            animation: floaty-bounce 4s ease-in-out infinite;
+            will-change: transform;
+        }
+        @keyframes floaty-bounce {
+            0%   { transform: translateY(0px) scale(1) rotate(-1deg); }
+            10%  { transform: translateY(-6px) scale(1.01) rotate(1deg);}
+            20%  { transform: translateY(-3px) scale(0.99) rotate(-1deg);}
+            30%  { transform: translateY(-7px) scale(1.02) rotate(1deg);}
+            40%  { transform: translateY(-3px) scale(0.98) rotate(-2deg);}
+            50%  { transform: translateY(0px) scale(1) rotate(0deg);}
+            60%  { transform: translateY(3px) scale(1.01) rotate(1deg);}
+            70%  { transform: translateY(7px) scale(0.99) rotate(-1deg);}
+            80%  { transform: translateY(3px) scale(1.02) rotate(1deg);}
+            90%  { transform: translateY(6px) scale(0.98) rotate(-2deg);}
+            100% { transform: translateY(0px) scale(1) rotate(0deg);}
+        }
+        `;
+        document.head.appendChild(style);
+
+        // Give each element a randomized animation-delay for a more natural float
+        const floatEls = document.querySelectorAll('.floating-animate');
+        floatEls.forEach((el, idx) => {
+            const delay = (Math.random() * 4).toFixed(2) + "s";
+            el.style.animationDelay = delay;
+        });
+    }
 });
 
 // Scroll reveal animation for sections
